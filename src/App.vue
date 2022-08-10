@@ -1,11 +1,15 @@
 <template>
-  App
+  <IssuesPage />
 </template>
 
 <script>
+import IssuesPage from './components/IssuesPage.vue';
 
 export default {
   name: 'App',
+  components: {
+    IssuesPage,
+  },
 };
 </script>
 
