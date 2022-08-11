@@ -55,7 +55,9 @@ export default {
 
       this.isLoader = true;
 
-      this.fetchIssues();
+      await this.fetchIssues();
+
+      this.isLoader = false;
     },
     async fetchIssues() {
       const api = 'https://api.github.com/repos/';
@@ -64,14 +66,8 @@ export default {
       try {
         const { data } = (await axios.get(url));
 
-        this.isLoader = false;
-
         return data;
       } catch (err) {
-        console.error(err);
-
-        this.isLoader = false;
-
         return null;
       }
     },
