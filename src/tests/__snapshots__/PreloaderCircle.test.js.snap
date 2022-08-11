@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test! PreloaderCircle hidden snapshot 1`] = `"<!--v-if-->"`;
+exports[`PreloaderCircle tests PreloaderCircle hidden snapshot 1`] = `"<!--v-if-->"`;
 
-exports[`test! PreloaderCircle visible snapshot 1`] = `"<div class=\\"preloader\\"></div>"`;
+exports[`PreloaderCircle tests PreloaderCircle visible snapshot 1`] = `"<div class=\\"preloader\\"></div>"`;
