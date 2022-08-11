@@ -1,23 +1,26 @@
 <template>
   <form
-    class="search-form"
+    class="finding-form"
     v-bind:class="classes"
   >
-    <label for="search-repository">
+    <label
+      for="finding-repository"
+      class="finding-form__label"
+    >
       <input
-        id="search-repository"
-        class="search-form__input"
+        id="finding-repository"
+        class="finding-form__input"
         type="text"
-        name="search-input"
+        name="finding-input"
         placeholder="vuejs/vue"
         v-model="repositoryName"
       >
     </label>
 
     <button
-      class="search-form__button"
+      class="finding-form__button"
       type="submit"
-      v-on:click="searchBtnHandler"
+      v-on:click="findingBtnHandler"
     >
       Search
     </button>
@@ -38,18 +41,25 @@ export default {
     };
   },
   methods: {
-    async searchBtnHandler(e) {
+    async findingBtnHandler(e) {
       e.preventDefault();
 
-      const url = 'https://api.github.com/repos/';
+      if (this.repositoryName === '') return;
+
+      this.fetchIssues();
+    },
+    async fetchIssues() {
+      const api = 'https://api.github.com/repos/';
+      const url = `${api}${this.repositoryName}/issues`;
 
       try {
-        const response = await axios.get(`${url}${this.repositoryName}/issues`);
-        const data = await response.data;
+        const { data } = (await axios.get(url));
 
-        console.log(data);
+        return data;
       } catch (err) {
         console.error(err);
+
+        return null;
       }
     },
   },
@@ -57,14 +67,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.search-form {
+.finding-form {
   display: flex;
   align-content: center;
   justify-content: center;
 
+  &__label {
+    display: flex;
+  }
+
   &__input {
     font-size: 20px;
 
+    width: 100%;
     margin-right: 20px;
     padding: 10px 15px;
 
