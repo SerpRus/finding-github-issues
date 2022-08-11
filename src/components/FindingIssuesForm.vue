@@ -25,19 +25,26 @@
       Search
     </button>
   </form>
+
+  <PreloaderCircle :isLoader="isLoader"/>
 </template>
 
 <script>
 import axios from 'axios';
+import PreloaderCircle from './PreloaderCircle.vue';
 
 export default {
   name: 'FindingIssuesForm',
   props: {
     classes: Array,
   },
+  components: {
+    PreloaderCircle,
+  },
   data() {
     return {
       repositoryName: '',
+      isLoader: false,
     };
   },
   methods: {
@@ -45,6 +52,8 @@ export default {
       e.preventDefault();
 
       if (this.repositoryName === '') return;
+
+      this.isLoader = true;
 
       this.fetchIssues();
     },
@@ -55,9 +64,13 @@ export default {
       try {
         const { data } = (await axios.get(url));
 
+        this.isLoader = false;
+
         return data;
       } catch (err) {
         console.error(err);
+
+        this.isLoader = false;
 
         return null;
       }
