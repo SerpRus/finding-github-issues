@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FindingErrorMessage tests FindingErrorMessage isErrorMessage: false snapshot 1`] = `"<!--v-if-->"`;
+
+exports[`FindingErrorMessage tests FindingErrorMessage isErrorMessage: true snapshot 1`] = `"<div class=\\"finding-error-message\\">Nothing found</div>"`;

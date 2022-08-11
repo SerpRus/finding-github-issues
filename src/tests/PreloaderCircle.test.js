@@ -1,7 +1,7 @@
 import {mount} from "@vue/test-utils";
 import PreloaderCircle from '../components/PreloaderCircle.vue';
 
-describe('test!', () => {
+describe('PreloaderCircle tests', () => {
   it('PreloaderCircle isLoader: true', () => {
     const wrapper = mount(PreloaderCircle, {
       props: {
