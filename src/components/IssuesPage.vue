@@ -20,7 +20,11 @@ export default {
 <style lang="scss">
 .issues-page {
   &__form {
-    margin: 50px 0 30px;
+    margin: 20px 0;
+
+    @media (min-width: 767) {
+      margin: 50px 0 30px;
+    }
   }
 }
 </style>
