@@ -27,11 +27,17 @@
   </form>
 
   <PreloaderCircle :isLoader="isLoader"/>
+
+  <FindingErrorMessage
+    :isErrorMessage="isErrorMessage"
+    :message="message"
+  />
 </template>
 
 <script>
 import axios from 'axios';
 import PreloaderCircle from './PreloaderCircle.vue';
+import FindingErrorMessage from './FindingErrorMessage.vue';
 
 export default {
   name: 'FindingIssuesForm',
@@ -40,11 +46,14 @@ export default {
   },
   components: {
     PreloaderCircle,
+    FindingErrorMessage,
   },
   data() {
     return {
       repositoryName: '',
       isLoader: false,
+      isErrorMessage: false,
+      message: 'Nothing found',
     };
   },
   methods: {
@@ -55,9 +64,15 @@ export default {
 
       this.isLoader = true;
 
-      await this.fetchIssues();
+      const result = await this.fetchIssues();
 
       this.isLoader = false;
+
+      if (result === null) {
+        this.isErrorMessage = true;
+      } else {
+        this.isErrorMessage = false;
+      }
     },
     async fetchIssues() {
       const api = 'https://api.github.com/repos/';
