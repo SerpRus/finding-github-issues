@@ -1,3 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FindingIssuesForm FindingIssuesForm snapshot 1`] = `"<form class=\\"finding-form\\"><label for=\\"finding-repository\\" class=\\"finding-form__label\\"><input id=\\"finding-repository\\" class=\\"finding-form__input\\" type=\\"text\\" name=\\"finding-input\\" placeholder=\\"vuejs/vue\\"></label><button class=\\"finding-form__button\\" type=\\"submit\\"> Search </button></form>"`;
+exports[`FindingIssuesForm FindingIssuesForm snapshot 1`] = `
+"<form class=\\"finding-form\\"><label for=\\"finding-repository\\" class=\\"finding-form__label\\"><input id=\\"finding-repository\\" class=\\"finding-form__input\\" type=\\"text\\" name=\\"finding-input\\" placeholder=\\"vuejs/vue\\"></label><button class=\\"finding-form__button\\" type=\\"submit\\"> Search </button></form>
+<!--v-if-->"
+`;

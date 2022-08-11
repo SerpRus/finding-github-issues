@@ -51,4 +51,4 @@ describe('FindingIssuesForm', () => {
 
     expect(wrapper.html()).toMatchSnapshot();
   });
-})
+});
