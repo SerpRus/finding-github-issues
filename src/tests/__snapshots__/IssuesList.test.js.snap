@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`issuesList tests issuesList current data snapshot 1`] = `
+"<ul id=\\"issues-list\\" class=\\"issues-list\\">
+  <li class=\\"issue-item\\">
+    <div class=\\"issue-item__state\\"> State: <span class=\\"issue-item__state-value\\">open</span></div><a class=\\"issue-item__link\\" href=\\"https://github.com/vuejs/vue/pull/12737\\">feat(types): new Vue() improvements (#12730)</a>
+    <div class=\\"issue-item__info\\">
+      <div class=\\"issue-item__number-with-date\\">
+        <div class=\\"issue-item__number\\"> #12737</div>
+        <div class=\\"issue-item__date\\"> opened on 11 Aug</div>
+      </div>
+      <div class=\\"issue-item__author\\"> by <a class=\\"issue-item__login\\" href=\\"https://github.com/gulewei\\">gulewei</a></div>
+    </div>
+  </li>
+  <li class=\\"issue-item\\">
+    <div class=\\"issue-item__state\\"> State: <span class=\\"issue-item__state-value\\">open</span></div><a class=\\"issue-item__link\\" href=\\"https://github.com/vuejs/vue/issues/12708\\">::v-deep is not working</a>
+    <div class=\\"issue-item__info\\">
+      <div class=\\"issue-item__number-with-date\\">
+        <div class=\\"issue-item__number\\"> #12708</div>
+        <div class=\\"issue-item__date\\"> opened on 27 Jul</div>
+      </div>
+      <div class=\\"issue-item__author\\"> by <a class=\\"issue-item__login\\" href=\\"https://github.com/handhikadj\\">handhikadj</a></div>
+    </div>
+  </li>
+</ul>"
+`;
+
+exports[`issuesList tests issuesList no data snapshot 1`] = `"<!--v-if-->"`;

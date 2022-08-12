@@ -42,6 +42,7 @@ import FindingErrorMessage from './FindingErrorMessage.vue';
 export default {
   name: 'FindingIssuesForm',
   props: {
+    getIssuesData: Function,
     classes: Array,
   },
   components: {
@@ -50,6 +51,7 @@ export default {
   },
   data() {
     return {
+      lastRepositoryName: '',
       repositoryName: '',
       isLoader: false,
       isErrorMessage: false,
@@ -60,7 +62,15 @@ export default {
     async findingBtnHandler(e) {
       e.preventDefault();
 
+      // Если поле поиска пустое, ничего не делаем
       if (this.repositoryName === '') return;
+
+      // Если последний запрос совпадает с текущим, ничего не делаем
+      if (this.lastRepositoryName === this.repositoryName) return;
+
+      this.lastRepositoryName = this.repositoryName;
+
+      this.getIssuesData([]);
 
       this.isLoader = true;
 
@@ -81,8 +91,12 @@ export default {
       try {
         const { data } = (await axios.get(url));
 
+        this.getIssuesData(data);
+
         return data;
       } catch (err) {
+        this.getIssuesData([]);
+
         return null;
       }
     },
@@ -98,34 +112,52 @@ export default {
 
   &__label {
     display: flex;
+    flex-grow: 1;
   }
 
   &__input {
-    font-size: 20px;
+    font-size: 16px;
 
     width: 100%;
-    margin-right: 20px;
-    padding: 10px 15px;
+    margin-right: 10px;
+    padding: 5px 10px;
 
     border: 2px solid brown;
     border-radius: 8px;
+
+    @media (min-width: 767px) {
+      font-size: 20px;
+
+      margin-right: 20px;
+      padding: 10px 15px;
+    }
 
     &:focus {
       border: 2px solid orange;
       outline: none;
     }
+
+    &::placeholder {
+      color: #aaa;
+    }
   }
 
   &__button {
-    font-size: 20px;
+    font-size: 16px;
 
-    padding: 10px 15px;
+    padding: 5px 10px;
 
     cursor: pointer;
 
     border: 2px solid brown;
     border-radius: 8px;
     background-color: #fff;
+
+    @media (min-width: 767px) {
+      font-size: 20px;
+
+      padding: 10px 15px;
+    }
 
     &:hover,
     &:focus {

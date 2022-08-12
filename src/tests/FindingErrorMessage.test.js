@@ -1,4 +1,4 @@
-import {mount} from "@vue/test-utils";
+import {mount} from '@vue/test-utils';
 import FindingErrorMessage from '../components/FindingErrorMessage.vue';
 
 describe('FindingErrorMessage tests', () => {
