@@ -1,4 +1,4 @@
-import {mount} from "@vue/test-utils";
+import { mount } from '@vue/test-utils';
 import PreloaderCircle from '../components/PreloaderCircle.vue';
 
 describe('PreloaderCircle tests', () => {

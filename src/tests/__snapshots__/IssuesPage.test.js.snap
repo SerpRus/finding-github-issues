@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IssuesPage tests IssuesPage correct issuesData snapshot 1`] = `
+"<div class=\\"container\\">
+  <form class=\\"finding-form issues-page__form\\">
+    <h1 class=\\"finding-form__title\\">Enter repository name</h1>
+    <div class=\\"finding-form__content\\"><label for=\\"finding-repository\\" class=\\"finding-form__label\\"><input id=\\"finding-repository\\" class=\\"finding-form__input\\" type=\\"text\\" name=\\"finding-input\\" placeholder=\\"vuejs/vue\\"></label><button class=\\"finding-form__button\\" type=\\"submit\\"> Search </button></div>
+  </form>
+  <!--v-if-->
+  <!--v-if-->
+  <ul id=\\"issues-list\\" class=\\"issues-list\\">
+    <li class=\\"issue-item\\">
+      <div class=\\"issue-item__left-content\\">
+        <div class=\\"issue-item__state\\"> State: <span class=\\"issue-item__state-value\\">open</span></div>
+        <div class=\\"issue-item__title-wrapper\\"><a class=\\"issue-item__title\\" href=\\"https://github.com/vuejs/vue/pull/12737\\">feat(types): new Vue() improvements (#12730)</a></div>
+        <div class=\\"issue-item__info\\">
+          <div class=\\"issue-item__number-with-date\\">
+            <div class=\\"issue-item__number\\"> #12737</div>
+            <div class=\\"issue-item__date\\"> opened on 11 Aug</div>
+          </div>
+          <div class=\\"issue-item__author\\"> by <a class=\\"issue-item__login\\" href=\\"https://github.com/gulewei\\">gulewei</a></div>
+        </div>
+      </div>
+      <div class=\\"issue-item__right-content\\">
+        <!--v-if-->
+      </div>
+    </li>
+    <li class=\\"issue-item\\">
+      <div class=\\"issue-item__left-content\\">
+        <div class=\\"issue-item__state\\"> State: <span class=\\"issue-item__state-value\\">open</span></div>
+        <div class=\\"issue-item__title-wrapper\\"><a class=\\"issue-item__title\\" href=\\"https://github.com/vuejs/vue/issues/12708\\">::v-deep is not working</a></div>
+        <div class=\\"issue-item__info\\">
+          <div class=\\"issue-item__number-with-date\\">
+            <div class=\\"issue-item__number\\"> #12708</div>
+            <div class=\\"issue-item__date\\"> opened on 27 Jul</div>
+          </div>
+          <div class=\\"issue-item__author\\"> by <a class=\\"issue-item__login\\" href=\\"https://github.com/handhikadj\\">handhikadj</a></div>
+        </div>
+      </div>
+      <div class=\\"issue-item__right-content\\">
+        <!--v-if-->
+      </div>
+    </li>
+  </ul>
+</div>"
+`;
+
+exports[`IssuesPage tests IssuesPage no issuesData snapshot 1`] = `
+"<div class=\\"container\\">
+  <form class=\\"finding-form issues-page__form\\">
+    <h1 class=\\"finding-form__title\\">Enter repository name</h1>
+    <div class=\\"finding-form__content\\"><label for=\\"finding-repository\\" class=\\"finding-form__label\\"><input id=\\"finding-repository\\" class=\\"finding-form__input\\" type=\\"text\\" name=\\"finding-input\\" placeholder=\\"vuejs/vue\\"></label><button class=\\"finding-form__button\\" type=\\"submit\\"> Search </button></div>
+  </form>
+  <!--v-if-->
+  <!--v-if-->
+  <!--v-if-->
+</div>"
+`;

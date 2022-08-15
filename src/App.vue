@@ -30,11 +30,12 @@ export default {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1020px;
   margin: 0 auto;
   padding: 0 10px;
 
   @media (min-width: 767px) {
+    max-width: 1030px;
     padding: 0 15px;
   }
 }

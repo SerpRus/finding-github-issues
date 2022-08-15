@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IssueItem tests IssueItem snapshot 1`] = `
+"<li class=\\"issue-item\\">
+  <div class=\\"issue-item__left-content\\">
+    <div class=\\"issue-item__state\\"> State: <span class=\\"issue-item__state-value\\">open</span></div>
+    <div class=\\"issue-item__title-wrapper\\"><a class=\\"issue-item__title\\" href=\\"https://github.com/vuejs/vue/pull/12737\\">feat(types): new Vue() improvements (#12730)</a><span class=\\"issue-item__label\\" style=\\"background-color: rgb(132, 55, 218);\\">2.7</span><span class=\\"issue-item__label\\" style=\\"background-color: rgb(29, 118, 219);\\">feat:types</span></div>
+    <div class=\\"issue-item__info\\">
+      <div class=\\"issue-item__number-with-date\\">
+        <div class=\\"issue-item__number\\"> #12737</div>
+        <div class=\\"issue-item__date\\"> opened on 11 Aug</div>
+      </div>
+      <div class=\\"issue-item__author\\"> by <a class=\\"issue-item__login\\" href=\\"https://github.com/gulewei\\">gulewei</a></div>
+    </div>
+  </div>
+  <div class=\\"issue-item__right-content\\"><a class=\\"issue-item__comments\\" href=\\"https://github.com/vuejs/vue/pull/12737\\"><img class=\\"issue-item__icon-comment\\" src=\\"\\" alt=\\"\\"><span>2</span></a></div>
+</li>"
+`;

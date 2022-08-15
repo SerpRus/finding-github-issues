@@ -29,8 +29,8 @@ export default {
 
   &::before {
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 
     content: '';
     animation: preloader-rotate 1s ease infinite;
@@ -38,6 +38,14 @@ export default {
     border: 8px solid #ccc;
     border-left: 8px solid brown;
     border-radius: 50%;
+
+    @media (min-width: 767px) {
+      width: 100px;
+      height: 100px;
+
+      border: 4px solid #ccc;
+      border-left: 4px solid brown;
+    }
   }
 }
 
