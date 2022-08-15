@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import IssuesPage from '../components/IssuesPage.vue';
 
 describe('IssuesPage tests', () => {
@@ -10,7 +10,7 @@ describe('IssuesPage tests', () => {
     title: 'feat(types): new Vue() improvements (#12730)',
     user: {
       login: 'gulewei',
-      html_url: 'https://github.com/gulewei'
+      html_url: 'https://github.com/gulewei',
     },
   },
   {
@@ -21,7 +21,7 @@ describe('IssuesPage tests', () => {
     title: '::v-deep is not working',
     user: {
       login: 'handhikadj',
-      html_url: 'https://github.com/handhikadj'
+      html_url: 'https://github.com/handhikadj',
     },
   }];
 
@@ -45,7 +45,6 @@ describe('IssuesPage tests', () => {
         };
       },
     });
-
 
     expect(wrapper.html()).toMatchSnapshot();
   });

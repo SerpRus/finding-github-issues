@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import issuesList from '../components/issuesList.vue';
 
 describe('issuesList tests', () => {
@@ -10,7 +10,7 @@ describe('issuesList tests', () => {
     title: 'feat(types): new Vue() improvements (#12730)',
     user: {
       login: 'gulewei',
-      html_url: 'https://github.com/gulewei'
+      html_url: 'https://github.com/gulewei',
     },
   },
   {
@@ -21,7 +21,7 @@ describe('issuesList tests', () => {
     title: '::v-deep is not working',
     user: {
       login: 'handhikadj',
-      html_url: 'https://github.com/handhikadj'
+      html_url: 'https://github.com/handhikadj',
     },
   }];
 

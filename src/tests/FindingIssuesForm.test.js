@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import axios from 'axios';
 import FindingIssuesForm from '../components/FindingIssuesForm.vue';
 
-jest.mock("axios");
+jest.mock('axios');
 
 describe('FindingIssuesForm tests', () => {
   it('Empty request button click', async () => {
@@ -19,17 +19,17 @@ describe('FindingIssuesForm tests', () => {
         getIssuesData(data) {
           this.issuesData = data;
         },
-      }
+      },
     });
     const query = 'vuejs/vue';
-    const testData = {data: {}};
+    const testData = { data: {} };
     axios.get.mockResolvedValueOnce(testData);
-    
+
     wrapper.find('input').setValue(query);
     wrapper.find('button').trigger('click');
 
     expect(axios.get).toHaveBeenCalledTimes(1);
-    expect(axios.get).toHaveBeenCalledWith(`https://api.github.com/repos/${query}/issues`)
+    expect(axios.get).toHaveBeenCalledWith(`https://api.github.com/repos/${query}/issues`);
   });
 
   it('FindingIssuesForm snapshot', () => {

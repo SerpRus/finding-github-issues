@@ -2,52 +2,82 @@
   <li
     class="issue-item"
   >
-    <div
-      class="issue-item__state"
-    >
-      State:
-      <span
-        class="issue-item__state-value"
-        v-bind:class="[{'issue-item__state-value--closed': isStateClosed}]"
+    <div class="issue-item__left-content">
+      <div
+        class="issue-item__state"
       >
-        {{ value.state }}
-      </span>
+        State:
+        <span
+          class="issue-item__state-value"
+          v-bind:class="[{'issue-item__state-value--closed': isStateClosed}]"
+        >
+          {{ value.state }}
+        </span>
+      </div>
+
+      <div class="issue-item__title-wrapper">
+        <a
+          class="issue-item__title"
+          :href="value.html_url"
+        >
+          {{ value.title }}
+        </a>
+
+        <span
+          class="issue-item__label"
+          v-for="label in value.labels"
+          v-bind:key="label.id"
+          :style="{backgroundColor: `#${label.color}`}"
+        >
+          {{ label.name }}
+        </span>
+      </div>
+
+      <div class="issue-item__info">
+        <div class="issue-item__number-with-date">
+          <div class="issue-item__number">
+            #{{ value.number }}
+          </div>
+
+          <div class="issue-item__date">
+            opened on {{ getDate() }}
+          </div>
+        </div>
+
+        <div class="issue-item__author">
+          by
+
+          <a
+            class="issue-item__login"
+            :href="value.user.html_url"
+          >
+            {{ value.user.login }}
+          </a>
+        </div>
+      </div>
     </div>
 
-    <a
-      class="issue-item__link"
-      :href="value.html_url"
-    >
-      {{ value.title }}
-    </a>
-
-    <div class="issue-item__info">
-      <div class="issue-item__number-with-date">
-        <div class="issue-item__number">
-          #{{ value.number }}
-        </div>
-
-        <div class="issue-item__date">
-          opened on {{ getDate() }}
-        </div>
-      </div>
-
-      <div class="issue-item__author">
-        by
-
-        <a
-          class="issue-item__login"
-          :href="value.user.html_url"
+    <div class="issue-item__right-content">
+      <a
+        class="issue-item__comments"
+        :href="value.html_url"
+        v-if="value.comments > 0"
+      >
+        <img
+          class="issue-item__icon-comment"
+          src="../assets/icons/icon-comment.png"
+          alt=""
         >
-          {{ value.user.login }}
-        </a>
-      </div>
+
+        <span>
+          {{ value.comments }}
+        </span>
+      </a>
     </div>
   </li>
 </template>
 
 <script>
-
 export default {
   name: 'IssueItem',
   props: {
@@ -74,6 +104,10 @@ export default {
 
 <style lang="scss" scoped>
 .issue-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   margin: 0;
   padding: 5px 10px;
 
@@ -96,6 +130,10 @@ export default {
     border-radius: 0 0 8px 8px;
   }
 
+  &__left-content {
+    padding-right: 5px;
+  }
+
   &__state {
     padding: 5px 0;
 
@@ -108,10 +146,10 @@ export default {
     }
   }
 
-  &__link {
+  &__title {
     display: inline-flex;
 
-    margin: 5px 0;
+    margin: 5px 10px 5px 0;
 
     color: #000;
 
@@ -121,6 +159,22 @@ export default {
 
     &:focus {
       outline: 2px solid orange;
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    font-weight: 500;
+
+    display: inline-flex;
+
+    padding: 4px 7px;
+
+    color: #fff;
+    border-radius: 16px;
+
+    &:not(:last-child) {
+      margin-right: 5px;
     }
   }
 
@@ -159,6 +213,22 @@ export default {
     &:focus {
       outline: 2px solid orange;
     }
+  }
+
+  &__comments {
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #000;
+  }
+
+  &__icon-comment {
+    width: 24px;
+    margin-right: 3px;
   }
 }
 </style>
